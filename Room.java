@@ -1,3 +1,7 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Room {
 	public static void main(String[] args) {}
    private int roomNum;
@@ -6,10 +10,10 @@ public class Room {
    private String occupantName;
    private char smoking;
    private boolean occupied;
-  
+   private ArrayList<LocalDate> totalDates;
    //default constructor
    public Room() {
-
+	   this.totalDates=new ArrayList<>();
    }
 
    //Parameterized constructor
@@ -67,6 +71,72 @@ public class Room {
    public void setOccupied(boolean occupied) {
        this.occupied = occupied;
    }
+   
+   public String getTotalDate(){
+	   if(totalDates != null){
+	   return totalDates.toString();
+	   }
+	   else{
+		   return "No days reserved";
+	   }
+   }
+   /**
+    * enter two dates and will reserve those two days and the days in between
+    * @param start
+    * @param end
+    */
+   public void setTotalDate(LocalDate start, LocalDate end){
+	   //this.totalDates=new ArrayList<>();
+	   if(totalDates == null){
+		   this.totalDates=new ArrayList<>();
+		   while (!start.isAfter(end)) {
+			   totalDates.add(start);
+			   start = start.plusDays(1);
+		   }
+	   }
+	   else{
+		   while (!start.isAfter(end)) {
+			   totalDates.add(start);
+			   start = start.plusDays(1);
+		   }
+		   
+	   }
+   }
+   /**
+    * takes two dates and checks against Rooms arraylist if they already exist
+    * @param startDate
+    * @param endDate
+    * @return
+    */
+   public  boolean checkTotalDate(String startDate, String endDate){
+
+	   LocalDate start2 = LocalDate.parse(startDate);
+	   LocalDate end2 = LocalDate.parse(endDate);
+	   int value ;
+	   int value2 ;
+	   boolean searchResult = true;
+	   
+	   if(totalDates != null){
+	   
+	   value = Collections.binarySearch(totalDates, start2);
+	   value2 = Collections.binarySearch(totalDates, end2);
+	  
+	   if (value < 0 && value2 < 0) {
+			setTotalDate(start2, end2);
+		   searchResult = true;
+	   }
+	   }
+	   else if( totalDates == null){
+		   setTotalDate(start2,end2);
+		   searchResult = true;
+	   }
+	   
+	   else{
+		   searchResult = false;
+	   }
+	   return searchResult;
+   }
+
   
    @Override
    public String toString() {
@@ -75,7 +145,8 @@ public class Room {
                "Occupant name:"+status+"\n"+
                "Smoking room: " +getSmoking()+"\n"+
                "Bed Type: queen " +getBedType()+"\n"+
-               "Rate: "+getRate()+"\n";
+               "Rate: "+getRate()+"\n"+
+       		   "Days Reserved:"+ getTotalDate();
    }
 }
 
