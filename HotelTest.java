@@ -9,7 +9,8 @@ public class HotelTest {
        hotel.addRoom(104, "twin", 's', 100);
        hotel.addRoom(105, "queen", 'n', 99);
       
-       hotel.addReservation("Coffey", 'n',"king");
+       hotel.addReservation("Coffey", 'n',"king","2014-12-10","2014-12-15");
+       hotel.addReservation("Coffey", 'n',"king","2014-12-16","2014-12-18");
       
        System.out.println("-----------------------------");
        System.out.println(hotel);

@@ -62,7 +62,7 @@ public static void main(String[] args) {}
        numOfRooms++;
    }
   
-   public void addReservation(String occupantName,char smoking,String bedType) {
+   public void addReservation(String occupantName,char smoking,String bedType,String startDate, String endDate) {
       
        boolean reservationStatus=false;
        for(int i=0;i<numOfRooms;i++) {
@@ -70,7 +70,8 @@ public static void main(String[] args) {}
            if(room!=null
                    && !room.isOccupied()
                    && room.getBedType().equalsIgnoreCase(bedType)
-                   && room.getSmoking()==smoking) {
+                   && room.getSmoking()==smoking
+                   && room.checkTotalDate(startDate, endDate)) {
               
                System.out.println("Room found with criteria");
                room.setOccupied(true);
