@@ -40,7 +40,7 @@ public class MainScreen {
 			if(selector.equalsIgnoreCase("E")){
 				
 				
-				System.out.println("Enter function type A)dd reservation, R)emove reservation, V)iew all rooms & status or Q)uit:");
+				System.out.println("Enter function type A)dd reservation, R)emove reservation, V)iew all rooms & status, and Q)uit:");
 				String add = input.nextLine();
 				if(add.equalsIgnoreCase("A")){
 					System.out.println("Enter customer name:");
@@ -65,7 +65,9 @@ public class MainScreen {
 				else if (add.equalsIgnoreCase("V")){
 				hotel.printReservationList();
 				}
-				
+				/*else if (add.equalsIgnoreCase("P")){
+					hotel.Receipt
+				}*/
 				
 				else if (selector.equalsIgnoreCase("Q")){
 					System.out.println("Exiting System");
@@ -73,16 +75,17 @@ public class MainScreen {
 				
 			}}
 			if(selector.equalsIgnoreCase("M")){
-				Manager.launch();
+				
 				
 				System.out.println("Enter function type: O)ccupancy Percentage, D)aily Sales");
 				String function = input.nextLine();
 				if(function.equalsIgnoreCase("O")){
 					double occupancy = hotel.occupancyPercentage();
-					System.out.println(occupancy);
+					System.out.println(occupancy + "%");
 				}
 				else if(function.equalsIgnoreCase("D")){
-					hotel.getDailySales();
+					double sales = hotel.getDailySales();
+					System.out.println("Total daily sales are: $" + sales);
 				}
 				else{
 					System.out.println("Input error!");

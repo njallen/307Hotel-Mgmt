@@ -1,5 +1,3 @@
-import java.io.PrintWriter;
-import java.io.File;
 //import the decimal format to format the decimal numbers
 import java.io.FileNotFoundException;
 
@@ -20,11 +18,7 @@ public class Receipt
      public static void main(String args[]) throws FileNotFoundException
 
      {
-    	 // PrinterWriter needs completed
-File file = new File ("Desktop/file.txt");
-PrintWriter printWriter = new PrintWriter ("file.txt"); 
-printWriter.println("Hello World!");
-
+    	 
           //Scanner object
 
           Scanner in=new Scanner(System.in);
@@ -53,8 +47,12 @@ printWriter.println("Hello World!");
 
           System.out.println("Enter number of nights stayed under the customers room type:");
 
-          //loop to get the quantity of each item
-
+          //loop to get the quantity of each it
+          
+          
+          
+          
+          
           for(int i=0;i<items.length;i++)
 
           {
@@ -126,7 +124,6 @@ printWriter.println("Hello World!");
           System.out.printf("%45s %15s $%s\n", subInfo[1],space, decimalFormat.format(HST));
 
           System.out.printf("%45s %15s $%s\n", subInfo[2],space, decimalFormat.format(grandTotal));
-
+          }
      }
 
-}

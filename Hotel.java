@@ -1,5 +1,3 @@
-
-
 public class Hotel {
 public static void main(String[] args) {}
    private static final int NOT_FOUND = -1;
@@ -10,7 +8,7 @@ public static void main(String[] args) {}
    private int numOfRooms;
   
    public Hotel() {
-       rooms = new Room[10];
+       rooms = new Room[20];
    }
 
    public Hotel(String name, String location) {
@@ -102,7 +100,7 @@ public static void main(String[] args) {}
                room.setOccupied(false);
                occupiedCnt--;
                cancellationStatus=true;
-               System.out.println("Canecllation successfully");
+               System.out.println("Cancellation successful!");
                break;
            }
        }
@@ -141,6 +139,7 @@ public static void main(String[] args) {}
            if(room!=null
                    && room.isOccupied()) {
                System.out.println(room);
+               System.out.println("");
            }
        }
 

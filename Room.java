@@ -144,8 +144,8 @@ public class Room {
        return "Room Number: " +getRoomNum()+"\n"+
                "Occupant name:"+status+"\n"+
                "Smoking room: " +getSmoking()+"\n"+
-               "Bed Type: queen " +getBedType()+"\n"+
-               "Rate: "+getRate()+"\n"+
+               "Bed Type:  " +getBedType()+"\n"+
+               "Daily Rate: "+getRate()+"\n"+
        		   "Days Reserved:"+ getTotalDate();
    }
 }
