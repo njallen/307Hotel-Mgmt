@@ -39,7 +39,7 @@ printWriter.println("Hello World!");
 
           //declare the string array of items
 
-          String items[]=new String[]{"Single", "Double", "Queen", "King"};
+          String items[]=new String[]{"twin", "double twin", "queen", "king"};
 
           //define and declare the itemquantity array
 
@@ -47,7 +47,7 @@ printWriter.println("Hello World!");
 
           int itemquantity[]=new int[items.length];
 
-          double unitCost[]=new double[]{99,129,69,39};
+          double unitCost[]=new double[]{100,175,175,200};
 
           //Prompt the user to enter the quantities
 
@@ -109,7 +109,7 @@ printWriter.println("Hello World!");
 
           System.out.println("\n==========================================================================");
 
-          //compute the HST
+          //compute the sales tax
 
           HST=total*13/100;
 
@@ -119,7 +119,7 @@ printWriter.println("Hello World!");
 
           //print the final result
 
-          String subInfo[]={"Sub Total", "13% HST", "Grand Total"};
+          String subInfo[]={"Sub Total", "13% Sales Tax", "Grand Total"};
 
           System.out.printf("%45s %15s $%s\n", subInfo[0],space, decimalFormat.format(total) );
 
